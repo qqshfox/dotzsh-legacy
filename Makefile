@@ -1,12 +1,15 @@
-.PHONY: all submodules install clean
+.PHONY: all submodules update install clean
 
 all: submodules
 
 submodules:
+	git submodule sync
 	git submodule update --init --recursive
 
-git-prompt:
+git-prompt: submodules
 	ln -sf bundle/zsh-git-prompt git-prompt
+
+update: submodules
 
 current_path=$(shell pwd)
 install: all
