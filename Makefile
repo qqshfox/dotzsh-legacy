@@ -5,6 +5,9 @@ all: submodules
 submodules:
 	git submodule update --init --recursive
 
+git-prompt:
+	ln -sf bundle/zsh-git-prompt git-prompt
+
 current_path=$(shell pwd)
 install: all
 	ln -sf ${current_path} ~/.zsh

@@ -1,3 +1,6 @@
 [submodule "bundle/zsh-syntax-highlighting"]
 	path = bundle/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "bundle/zsh-git-prompt"]
+	path = bundle/zsh-git-prompt
+	url = https://github.com/digal/zsh-git-prompt.git
