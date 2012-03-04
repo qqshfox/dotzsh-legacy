@@ -98,6 +98,11 @@ setprompt () {
 	PR_STITLE=''
     fi
 
+    if [[ -n "$SSH_CLIENT" || -n "$SSH2_CLIENT" ]]; then
+        eval PR_HOST='${PR_MAGENTA}%m' #SSH
+    else
+        eval PR_HOST='${PR_GREEN}%m' # no SSH
+    fi
 
     ###
     # Finally, the prompt.
@@ -106,7 +111,7 @@ setprompt () {
 $PR_CYAN$PR_SHIFT_IN$PR_ULCORNER$PR_HBAR$PR_SHIFT_OUT$PR_GREY(\
 $PR_GREEN%$PR_PWDLEN<...<%~%<<\
 $PR_GREY)`rvm_prompt_info || rbenv_prompt_info`$PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_HBAR${(e)PR_FILLBAR}$PR_HBAR$PR_SHIFT_OUT$PR_GREY(\
-$PR_CYAN%(!.%SROOT%s.%n)$PR_GREY@$PR_GREEN%m:%l\
+$PR_CYAN%(!.%SROOT%s.%n)$PR_GREY@$PR_GREEN$PR_HOST:%l\
 $PR_GREY)$PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_URCORNER$PR_SHIFT_OUT\
 
 $PR_CYAN$PR_SHIFT_IN$PR_LLCORNER$PR_BLUE$PR_HBAR$PR_SHIFT_OUT\
