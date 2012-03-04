@@ -1,2 +1,2 @@
 # Load RVM into a shell session *as a function*
-[ -s "/Users/hanfei/.rvm/scripts/rvm" ] && source "/Users/hanfei/.rvm/scripts/rvm"
+[ -f ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
