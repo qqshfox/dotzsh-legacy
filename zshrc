@@ -15,3 +15,5 @@ source ~/.zsh/bundle/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/bundle/zsh-git-prompt/zshrc.sh
 
 source ~/.zsh/themes/qqshfox.zsh-theme
+
+unsetopt extended_glob
