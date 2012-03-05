@@ -58,6 +58,14 @@ setprompt () {
     # Modify Git prompt
     ZSH_THEME_GIT_PROMPT_PREFIX=" on "
     ZSH_THEME_GIT_PROMPT_SUFFIX=""
+    ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+    ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
+    ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}*"
+    ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}x"
+    ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}+"
+    ZSH_THEME_GIT_PROMPT_REMOTE=""
+    ZSH_THEME_GIT_PROMPT_UNTRACKED="…"
+    ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}$"
 
     ###
     # See if we can use extended characters to look nicer.
@@ -72,7 +80,6 @@ setprompt () {
     PR_LLCORNER=${altchar[m]:--}
     PR_LRCORNER=${altchar[j]:--}
     PR_URCORNER=${altchar[k]:--}
-
 
     ###
     # Decide if we need to set titlebar text.
@@ -118,7 +125,7 @@ $PR_CYAN$PR_SHIFT_IN$PR_LLCORNER$PR_BLUE$PR_HBAR$PR_SHIFT_OUT\
 ($PR_YELLOW%D{%H:%M:%S}$PR_LIGHT_BLUE%{$reset_color%}$(git_super_status)$PR_BLUE)\
 $PR_BLUE$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT($PR_YELLOW%!$PR_BLUE)$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT\
 $PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT\
-➤$PR_NO_COLOUR '
+>$PR_NO_COLOUR '
 
     # display exitcode on the right when >0
     return_code="%(?..%{$fg[red]%}%? ↵ %{$reset_color%})"
@@ -128,7 +135,7 @@ $PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT\
 ($PR_YELLOW%D{%H:%M:%S}$PR_LIGHT_BLUE%{$reset_color%}$(git_super_status)$PR_BLUE)\
 $PR_BLUE$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT($PR_YELLOW%!$PR_BLUE)$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT\
 $PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT\
-➤$PR_NO_COLOUR '
+>$PR_NO_COLOUR '
 }
 
 setprompt
