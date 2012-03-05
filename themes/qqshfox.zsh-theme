@@ -128,7 +128,7 @@ $PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_SHIFT_OUT\
 >$PR_NO_COLOUR '
 
     # display exitcode on the right when >0
-    return_code="%(?..%{$fg[red]%}%? ↵ %{$reset_color%})"
+    return_code="%(?..%{$fg[red]%}%?! %{$reset_color%})"
     RPROMPT=' $return_code$PR_BLUE($PR_YELLOW%D$PR_BLUE)$PR_SHIFT_IN$PR_HBAR$PR_CYAN$PR_LRCORNER$PR_SHIFT_OUT$PR_NO_COLOUR'
 
     PS2='$PR_CYAN$PR_SHIFT_IN$PR_LLCORNER$PR_BLUE$PR_HBAR$PR_SHIFT_OUT\
