@@ -5753,6 +5753,7 @@ __git_setup_merge_options () {
     '(--stat -n --no-stat)'{-n,--no-stat}'[do not show diffstat at the end of the merge]'
     '(         --no-squash)--squash[merge, but do not commit]'
     '(--squash            )--no-squash[merge and commit]'
+    '--ff-only[refuse to merge unless HEAD is up to date or merge can be resolved as a fast-forward]'
     '*'{-s,--strategy=}'[use given merge strategy]:merge strategy:__git_merge_strategies'
     '*'{-X,--strategy-option=}'[pass merge-strategy-specific option to merge strategy]'
     '(-q --quiet -v --verbose)'{-q,--quiet}'[suppress all output]'
@@ -6138,6 +6139,7 @@ _git() {
 declare -gUa _git_third_party_commands
 _git_third_party_commands=()
 
+local file
 for file in ${^fpath}/_git-*~(*~|*.zwc)(.N); do
   local name=${${file:t}#_git-}
   if (( $+_git_third_party_commands[$name] )); then
