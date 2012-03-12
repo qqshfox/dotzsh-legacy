@@ -4,3 +4,6 @@
 [submodule "bundle/zsh-git-prompt"]
 	path = bundle/zsh-git-prompt
 	url = https://github.com/qqshfox/zsh-git-prompt.git
+[submodule "bundle/git-flow-completion"]
+	path = bundle/git-flow-completion
+	url = https://github.com/bobthecow/git-flow-completion.git
