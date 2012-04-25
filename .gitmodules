@@ -7,3 +7,6 @@
 [submodule "bundle/git-flow-completion"]
 	path = bundle/git-flow-completion
 	url = https://github.com/bobthecow/git-flow-completion.git
+[submodule "bundle/scm_breeze"]
+	path = bundle/scm_breeze
+	url = https://github.com/ndbroadbent/scm_breeze.git
