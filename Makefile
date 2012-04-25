@@ -16,6 +16,7 @@ current_path=$(shell pwd)
 install: all
 	ln -sf ${current_path} ~/.zsh
 	ln -sf ~/.zsh/zshrc ~/.zshrc
+	bundle/scm_breeze/install.sh
 
 clean:
 	rm -rf ~/.zsh
