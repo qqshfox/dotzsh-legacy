@@ -2,7 +2,7 @@
 
 all: submodules
 
-submodules:
+submodules: git-prompt
 	git submodule sync
 	git submodule update --init --recursive
 
