@@ -10,3 +10,6 @@
 [submodule "bundle/scm_breeze"]
 	path = bundle/scm_breeze
 	url = https://github.com/ndbroadbent/scm_breeze.git
+[submodule "bundle/zsh-completions"]
+	path = bundle/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git

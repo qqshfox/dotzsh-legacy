@@ -2,6 +2,7 @@
 
 zstyle :compinstall filename '~/.zshrc'
 
+fpath=(~/.zsh/bundle/zsh-completions/src $fpath)
 autoload -Uz compinit
 compinit -d ~/.zsh/zcompdump
 zstyle ':completion::complete:*' use-cache 1
