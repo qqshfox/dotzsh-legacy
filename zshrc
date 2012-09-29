@@ -18,5 +18,3 @@ source ~/.zsh/bundle/git-flow-completion/git-flow-completion.zsh
 source ~/.zsh/bundle/scm_breeze/scm_breeze.sh
 
 source ~/.zsh/themes/qqshfox.zsh-theme
-
-unsetopt extended_glob
