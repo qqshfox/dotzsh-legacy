@@ -14,7 +14,7 @@ for config_file (~/.zsh/lib/*.zsh) source $config_file
 source ~/.zsh/bundle/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/bundle/zsh-git-prompt/zshrc.sh
 source ~/.zsh/bundle/git-flow-completion/git-flow-completion.zsh
-[ -s "/Users/hanfei/.scm_breeze/scm_breeze.sh" ] && source "/Users/hanfei/.scm_breeze/scm_breeze.sh"
+source ~/.zsh/bundle/scm_breeze/scm_breeze.sh
 
 source ~/.zsh/themes/qqshfox.zsh-theme
 
