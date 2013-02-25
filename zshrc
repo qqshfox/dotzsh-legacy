@@ -18,3 +18,4 @@ source ~/.zsh/bundle/git-flow-completion/git-flow-completion.zsh
 source ~/.zsh/bundle/scm_breeze/scm_breeze.sh
 
 source ~/.zsh/themes/qqshfox.zsh-theme
+export LANG=zh_CN.UTF-8
