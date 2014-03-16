@@ -12,7 +12,7 @@ git-prompt: submodules
 	ln -sf bundle/zsh-git-prompt git-prompt
 
 update: submodules
-	wget 'http://zsh.git.sourceforge.net/git/gitweb.cgi?p=zsh/zsh;a=blob_plain;f=Completion/Unix/Command/_git;hb=HEAD' -O lib/git-completion.zsh
+	wget 'http://sourceforge.net/p/zsh/code/ci/master/tree/Completion/Unix/Command/_git?format=raw' -O lib/git-completion.zsh
 
 install: all install_scm_breeze
 	ln -sf ${current_path} ~/.zsh
