@@ -12,7 +12,7 @@ function theme_precmd {
     PR_PWDLEN=""
 
     local promptsize=${#${(%):---(%n@%m:%l)---()--}}
-    local rubyprompt=`rvm_prompt_info || rbenv_prompt_info`
+    rubyprompt="`rvm_prompt_info || echo \($(rbenv_prompt_info)\)`"
     local rubypromptsize=${#${rubyprompt}}
     local pwdsize=${#${(%):-%~}}
 
@@ -110,7 +110,7 @@ setprompt () {
     PROMPT='$PR_SET_CHARSET$PR_STITLE${(e)PR_TITLEBAR}\
 $PR_CYAN$PR_SHIFT_IN$PR_ULCORNER$PR_HBAR$PR_SHIFT_OUT$PR_GREY(\
 $PR_GREEN%$PR_PWDLEN<...<%~%<<\
-$PR_GREY)`rvm_prompt_info || rbenv_prompt_info`$PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_HBAR${(e)PR_FILLBAR}$PR_HBAR$PR_SHIFT_OUT$PR_GREY(\
+$PR_GREY)$rubyprompt$PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_HBAR${(e)PR_FILLBAR}$PR_HBAR$PR_SHIFT_OUT$PR_GREY(\
 $PR_CYAN%(!.%SROOT%s.%n)$PR_GREY@$PR_GREEN$PR_HOST:%l\
 $PR_GREY)$PR_CYAN$PR_SHIFT_IN$PR_HBAR$PR_URCORNER$PR_SHIFT_OUT\
 
