@@ -925,7 +925,7 @@ _git-grep () {
     '--untracked[search in untracked files]' \
     '(-a --text)'{-a,--text}'[process binary files as if they were text]' \
     '(--textconv --no-textconv)--textconv[honor textconv filter settings]' \
-    '(--textconv --no-textconv}--no-textconv[do not honor textconv filter settings]' \
+    '(--textconv --no-textconv)--no-textconv[do not honor textconv filter settings]' \
     '(-i --ignore-case)'{-i,--ignore-case}'[ignore case when matching]' \
     '-I[do not match pattern in binary files]' \
     '--max-depth=[descend at most given levels of directories]: :__git_guard_number depth' \
@@ -1536,7 +1536,7 @@ _git-stash () {
             '(--keep-index                )--no-keep-index[all changes already added to the index are undone]' \
             '(-q --quiet)'{-q,--quiet}'[suppress all output]' \
             '(-u --include-untracked)'{-u,--include-untracked}'[include untracked files]' \
-            '::message' && ret=0
+            ':: :_guard "([^-]?#|)" message' && ret=0
           ;;
         (list)
           local -a log_options revision_options
@@ -5602,7 +5602,7 @@ __git_commit_ranges () {
   if compset -P '*..(.|)'; then
     __git_commits $*
   else
-    compset -S '..*' || suf=( -qS .. -r '.@~ ^:' )
+    compset -S '..*' || suf=( -S .. -r '.@~ ^:\t\n\-' )
     __git_commits $* $suf
   fi
 }
