@@ -4,12 +4,9 @@ current_path=$(shell pwd)
 
 all: submodules
 
-submodules: git-prompt
+submodules:
 	git submodule sync
 	git submodule update --init --recursive
-
-git-prompt: submodules
-	ln -sf bundle/zsh-git-prompt git-prompt
 
 update: submodules
 	wget 'http://sourceforge.net/p/zsh/code/ci/master/tree/Completion/Unix/Command/_git?format=raw' -O lib/git-completion.zsh
@@ -22,12 +19,9 @@ install_scm_breeze:
 	ln -sf ~/.zsh/bundle/scm_breeze ~/.scm_breeze
 	ln -sf ~/.zsh/git.scmbrc ~/.git.scmbrc
 
-clean: clean_git_prompt clean_scm_breeze
+clean: clean_scm_breeze
 	rm -rf ~/.zsh
 	rm -rf ~/.zshrc
-
-clean_git_prompt:
-	rm -f git-prompt
 
 clean_scm_breeze:
 	rm -f ~/.git.scmbrc
