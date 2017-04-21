@@ -1,3 +1,4 @@
 zcompdump
 git-prompt
 history
+/configs/aws.credentials.zsh
